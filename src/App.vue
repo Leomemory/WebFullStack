@@ -1,6 +1,9 @@
 <template>
   <div id="app">
+    <router-link :to="{name:'pageA'}">PageA</router-link>
+    <router-link to="/pageb">PageB</router-link>
     <router-view/>
+    <router-view name="divid"/> <!--设置router.js中components控制router-view不同显示 -->
   </div>
 </template>
 
