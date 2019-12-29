@@ -8,6 +8,20 @@ import router from './router'
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 
+router.beforeEach((to,from,next)=>{
+   console.log('beforeEach',to,from)
+   next()
+})
+
+router.beforeResolve((to,from,next)=>{
+  console.log('beforeResolve',to,from)
+  next()
+})
+
+router.afterEach((to,from)=>{
+  console.log('afterEach',to,from)
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

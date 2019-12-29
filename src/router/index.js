@@ -26,6 +26,10 @@ export default new Router({
       components: {
         default:pageA,
         divid:Elements
+      },
+      beforeEnter:(to,from,next)=>{
+        console.log('beforeEnter',to,from)
+        next()
       }
     },
     {
