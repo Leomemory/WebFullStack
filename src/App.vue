@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <router-link :to="{name:'pageA'}">PageA</router-link>
-    <router-link to="/pageb">PageB</router-link>
+    <h2>
+      <router-link to="/shopcart">购物车</router-link> &nbsp;&nbsp;
+      <router-link to="/elements">组件化设计</router-link> &nbsp;&nbsp;
+      <router-link :to="{name:'pageA'}">PageA</router-link> &nbsp;&nbsp;
+      <router-link to="/pageb">PageB</router-link> &nbsp;&nbsp;
+      <router-link to="/pagevuex">VuexPage</router-link> &nbsp;&nbsp;
+      <router-link to="/modules">VuexPageModules</router-link> &nbsp;&nbsp;
+      
+    </h2>
     <router-view/>
     <router-view name="divid"/> <!--设置router.js中components控制router-view不同显示 -->
   </div>

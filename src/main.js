@@ -7,6 +7,8 @@ import App from './App'
 import router from './router'
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+// import store from './store'
+import store from './store/modules/index'
 
 router.beforeEach((to,from,next)=>{
    console.log('beforeEach',to,from)
@@ -26,6 +28,7 @@ router.afterEach((to,from)=>{
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

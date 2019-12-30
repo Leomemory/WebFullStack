@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ShopCart from '@/pages/ShopCart'
+// import ShopCart from '@/pages/ShopCart'
 import Elements from '@/pages/Elements'
 import pageA from '@/pages/Routerpage/pageA'
 import pageB from '@/pages/Routerpage/pageB'
-
+import PageVuex from '@/pages/Vuex'
+import PageVuexModules from '@/pages/Vuex/modules.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -13,7 +14,7 @@ export default new Router({
     {
       path: '/shopcart',
       name: 'ShopCart',
-      component: ShopCart
+      component: ()=>import('@/pages/ShopCart/index').then(m => m.default)
     },
     {
       path: '/elements',
@@ -41,6 +42,16 @@ export default new Router({
       path: '/pageb/:id',
       props: true,
       component: pageB
+    },
+    {
+      path:'/pagevuex',
+      name:'PageVuex',
+      component:PageVuex
+    },
+    {
+      path:'/modules',
+      name:'PageVuexModules',
+      component:PageVuexModules
     }
   ]
 })
