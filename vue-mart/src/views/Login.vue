@@ -63,6 +63,23 @@ export default {
         handleLogin(e){
             // 阻止表单默认提交行为
             e.preventDefault();
+            // 登录请求
+            this.$store.dispatch("login",this.model).then(code=>{
+                if(code){
+                    //登录成功重定向
+                    const path = this.$route.query.redirect || '/';
+                    this.$router.push(path);
+                }
+            }).catch(error=>{
+                //有错误发生或登录失败
+                //登录失败弹出提示信息
+                const toast = this.$createToast({
+                    time: 2000,
+                    txt: error.message || error.response.data.message || "登录失败",
+                    type: "error"
+                });
+                toast.show();
+            })
         },
         haneldValidate(ret) {
             console.log(ret);

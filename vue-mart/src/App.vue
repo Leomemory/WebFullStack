@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> &nbsp;&nbsp;|&nbsp;&nbsp;
       <router-link to="/about">About</router-link>
+      <cube-button :inline="true" v-if="$store.state.isLogin" @click="logout">注销</cube-button>
     </div>
     <router-view/>
   </div>
@@ -10,7 +11,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    logout(){
+       this.$store.dispatch("logout")
+    }
+  }
 }
 </script>
 

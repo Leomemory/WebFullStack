@@ -42,7 +42,43 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    //代理server/server.js里真实的服务器地址
+    proxy: {
+        "/api": {
+            target: "http://127.0.0.1:3000/", 
+            changOrigin: true
+        }
+    },
+
+    // //模拟后台服务器express接口
+    // before(app){
+    //   app.get("/api/login", function(req, res) {
+    //     const { username, passwd } = req.query;
+    //     console.log(username, passwd);
+    //     if (username == "lijiang" && passwd == "123") {
+    //       res.json({ code: 1, token: "jilei" });
+    //     } else {
+    //       res.status(401).json({ code: 0, message: "用户名或者密码错误" });
+    //     }
+    //   });
+
+    //   // 保护接口中间件，配合前端拦截器使用，添加请求头验证
+    //   function auth(req, res, next) {
+    //     if (req.headers.token) {
+    //       // 已认证
+    //       next()
+    //     } else {
+    //       // 用户未授权
+    //       res.sendStatus(401)
+    //     }
+    //   }
+
+    //   // 获取登录用户信息
+    //   app.get("/api/userinfo", auth, function(req, res) {
+    //     res.json({ code: 1, data: { name: "李江", age: 20 } });
+    //   });
+    // }
   },
   plugins: [
     new webpack.DefinePlugin({
