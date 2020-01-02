@@ -17,6 +17,7 @@
     "koa-jwt": "^3.6.0",
     "koa-router": "^7.4.0",
     "vue": "^2.5.2",
+    "vue-create-api": "^0.2.3",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.2"
   },

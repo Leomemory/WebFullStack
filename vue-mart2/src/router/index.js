@@ -5,10 +5,20 @@ import Login from "@/views/Login";
 import Cart from "@/views/Cart";
 import HelloWorld from '@/components/HelloWorld'
 
+import History from "@/utils/history";
+Vue.use(History);
+
 Vue.use(Router)
+
+// 扩展Router，添加goBack方法
+Router.prototype.goBack = function() {
+  this.isBack = true;
+  this.back();
+};
 
 const router = new Router({
   mode:'history',
+  base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
@@ -53,6 +63,18 @@ router.beforeEach((to, from, next) => {
   } else {
     // 不需要登录验证
     next();
+  }
+});
+
+// 每次从路由出来以后
+router.afterEach((to, from) => {
+  if (router.isBack) {
+    History.pop();
+    router.isBack = false;
+    router.transitionName = "route-back";
+  } else {
+    History.push(to.path);
+    router.transitionName = "route-forward";
   }
 });
 

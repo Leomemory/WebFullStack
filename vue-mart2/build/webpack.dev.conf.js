@@ -84,19 +84,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           slider: [
             {
               id: 21,
-              img: "/img/01.jpg"
+              img: "https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1940742.jpg?max_age=2592000"
             },
             {
               id: 22,
-              img: "/img/02.jpg"
+              img: "https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1940348.jpg?max_age=2592000"
             },
             {
               id: 23,
-              img: "/img/03.jpg"
+              img: "https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1937356.jpg?max_age=2592000"
             },
             {
               id: 24,
-              img: "/img/04.jpg"
+              img: "https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1938709.jpg?max_age=2592000"
             }
           ],
           data: {
@@ -105,42 +105,42 @@ const devWebpackConfig = merge(baseWebpackConfig, {
                 id: 1,
                 title: "Vue2.x实战",
                 price: "100",
-                img: "/img/01.jpg",
+                img: "./assets/img/01.jpg",
                 count: 100
               },
               {
                 id: 2,
                 title: "React16.x实战",
                 price: "120",
-                img: "/img/03.jpg",
+                img: "./assets/img/03.jpg",
                 count: 100
               },
               {
                 id: 3,
                 title: "nodejs实战",
                 price: "80",
-                img: "/img/02.jpg",
+                img: "./assets/img/02.jpg",
                 count: 100
               },
               {
                 id: 4,
                 title: "前端工程化",
                 price: "110",
-                img: "/img/04.jpg",
+                img: "./assets/img/04.jpg",
                 count: 100
               },
               {
                 id: 5,
                 title: "面试",
                 price: "200",
-                img: "/img/02.jpg",
+                img: "./assets/img/02.jpg",
                 count: 100
               },
               {
                 id: 6,
                 title: "前端安全",
                 price: "30",
-                img: "/img/05.jpg",
+                img: "./assets/img/05.jpg",
                 count: 100
               }
             ],
