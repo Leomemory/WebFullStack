@@ -9,3 +9,5 @@ vue-mart: 运用cube-ui，实现全局路由守卫，登录状态保存，接口
 vue-mart2: 数据状态管理实践， vuex模块化，vue动画设计，全局组件实现与原理，全局回退管理, 登录账号密码：lijiang  123
 
 nuxt-test: vue通用框架nuxt的使用（npx create-nuxt-app nuxt-test或yarn create nuxt-app test-nuxt初始化项目）
+
+vue-test-ts: vue3.0使用TypeScript & 测试
