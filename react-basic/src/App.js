@@ -9,7 +9,12 @@ import './App.css';
 // import HookTest from './components/HookTest'
 // import ContextTest from './components/ContextTest'
 // import AntdForm from './components/AntdForm'
-import KForm from './components/KForm'
+// import KForm from './components/KForm'
+
+import ReduxTest from './components/ReduxTest'
+import { Provider } from "react-redux"
+import store from './store'
+import RouterSample from './components/RouterSample'
 
 function App() {
   return (
@@ -28,9 +33,16 @@ function App() {
 
        <ContextTest></ContextTest>
 
-       <AntdForm></AntdForm>*/}
+       <AntdForm></AntdForm
 
-       <KForm></KForm>
+       <KForm></KForm>>*/}
+
+       {/* <ReduxTest></ReduxTest> */}
+       <Provider store={store}>
+           <ReduxTest />
+
+           <RouterSample></RouterSample>
+       </Provider>
     </div>
   );
 }
