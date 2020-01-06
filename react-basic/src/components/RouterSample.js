@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Link, Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../store/user.redux";
@@ -82,12 +82,13 @@ const PrivateRoute = connect(state => ({ isLogin: state.user.isLogin }))(
   const Login = connect(
     state => ({
       isLogin: state.user.isLogin,
-      loading: state.user.loading
+      loading: state.user.loading,
+      error: state.user.error // 登录错误
     }),
     { login }
-  )(function({ location, isLogin, login, loading }) {
+  )(function({ location, isLogin, login, loading, error }) {  // 登录错误
     const redirect = location.state.redirect || "/";
-  
+    const [uname, setUname] = useState(""); // 用户名输入状
     if (isLogin) {
       return <Redirect to={redirect} />;
     }
@@ -96,8 +97,17 @@ const PrivateRoute = connect(state => ({ isLogin: state.user.isLogin }))(
       <div>
         <p>用户登录</p>
         <hr />
-        <button onClick={login} disabled={loading}>
+        {/* <button onClick={login} disabled={loading}>
           {loading ? "登录中..." : "登录"}
+        </button> */}
+        
+        {/* 显示错误信息 */}      
+        {error && <p>{error}</p>}      
+        {/* 输入用户名 */}      
+        <input type="text" onChange={e => setUname(e.target.value)} value={uname} />      
+        {/* 登录传参 */}      
+        <button onClick={() => login(uname)} disabled={loading}>        
+            {loading ? "登录中..." : "登录"}      
         </button>
       </div>
     );
