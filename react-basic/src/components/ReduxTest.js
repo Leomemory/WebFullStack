@@ -17,6 +17,7 @@ import {add, minus, asyncAdd} from "../store/count.redux.js"
 
 
 
+// 使用react-redux简化redux使用难度
 // const mapStateToProps = state => ({ num: state });
 // const mapDispatchToProps = { 
 //     add:()=>({type:"add"}),

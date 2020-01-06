@@ -1,4 +1,5 @@
-import { createStore, applyMiddleware,combineReducers } from 'redux'
+// redux只支持同步，实现异步任务需要中间件支持
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
