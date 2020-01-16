@@ -1,0 +1,7 @@
+# 配置process.yml
+apps:     #名字
+ - script : app.js      #执行的脚本
+   instances: 2           #启动几个进程
+   watch : true           #是否处于监听状态
+   env :                  #测试和商场环境变量配置
+    NODE_ENV: production

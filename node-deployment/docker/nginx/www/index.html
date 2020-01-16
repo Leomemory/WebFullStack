@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        hello,Docker...
+    </h3>
+    <p>
+        docker pull nginx     #拉取官方镜像
+        docker images nginx   #查看
+        mkdir www
+        echo 'hello docker!!' >> www/index.htm     #启动镜像
+        docker run -p 80:80 -v $PWD/www:/usr/share/nginx/html -d nginx    # 启动  # www⽬录⾥⾯放⼀个index.html
+        docker ps    # 查看进程
+        docker ps -a  # 查看全部
+    </p>
+</body>
+</html>
